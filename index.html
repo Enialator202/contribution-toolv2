@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relationship Budgeting Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Relationship Budgeting Tool</h1>
+    <form id="budgetForm">
+      <div class="input-group">
+        <label for="income1">Partner 1 Income ($) <span class="info-icon">i</span></label>
+        <input type="number" id="income1" min="0" required>
+        <span class="tooltip">Enter Partner 1's monthly income</span>
+      </div>
+
+      <div class="input-group">
+        <label for="income2">Partner 2 Income ($) <span class="info-icon">i</span></label>
+        <input type="number" id="income2" min="0" required>
+        <span class="tooltip">Enter Partner 2's monthly income</span>
+      </div>
+
+      <div class="input-group">
+        <label for="expenses">Total Shared Expenses ($) <span class="info-icon">i</span></label>
+        <input type="number" id="expenses" min="0" required>
+        <span class="tooltip">Total amount you both share (e.g., rent, bills)</span>
+      </div>
+
+      <div class="toggle-group">
+        <label for="breakdownToggle">Break Down Expenses?</label>
+        <input type="checkbox" id="breakdownToggle">
+      </div>
+
+      <div id="expenseBreakdown" class="hidden">
+        <div class="input-group" id="expenseList">
+          <label>Expense Categories:</label>
+          <div class="expense-item">
+            <input type="text" class="expense-name" placeholder="Expense Name" value="Rent">
+            <input type="number" class="expense-value" min="0" placeholder="$ Amount">
+          </div>
+          <div class="expense-item">
+            <input type="text" class="expense-name" placeholder="Expense Name" value="Groceries">
+            <input type="number" class="expense-value" min="0" placeholder="$ Amount">
+          </div>
+          <div class="expense-item">
+            <input type="text" class="expense-name" placeholder="Expense Name" value="Utilities">
+            <input type="number" class="expense-value" min="0" placeholder="$ Amount">
+          </div>
+        </div>
+        <button type="button" id="addExpense">Add Expense</button>
+      </div>
+
+      <div class="results" id="results"></div>
+      <button type="button" id="calculateBtn">Calculate Contributions</button>
+      <button type="button" id="downloadBtn">Download PDF</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
